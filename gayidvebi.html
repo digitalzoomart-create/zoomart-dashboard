@@ -490,7 +490,7 @@ function renderBranchTable(r, yoy, py){
   const el = document.getElementById('branchGrid');
   el.innerHTML='';
   new gridjs.Grid({
-    columns:['ფილიალი','კატეგორია','გაყიდვები','ტრანზაქციები','საშუალო ჩეკი','წილი საცალოში','YoY (იგივე ფილიალი)'],
+    columns:['ფილიალი',{name:'კატეგორია', formatter: (cell)=>gridjs.html(cell)},'გაყიდვები','ტრანზაქციები','საშუალო ჩეკი','წილი საცალოში','YoY (იგივე ფილიალი)'],
     data: rows, sort:true, search:true,
     pagination:{limit:15},
     className:{table:'gridjs-table'}
